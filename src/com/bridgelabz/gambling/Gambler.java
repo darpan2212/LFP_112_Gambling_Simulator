@@ -44,7 +44,7 @@ public class Gambler {
 		}
 		if(stake_value>daily_won_lose) {   //checking for games won and lost as well as amount lost or gained
 			daily_won_lose = stake_value - daily_won_lose;
-			System.out.println("Amount earned for day : " + day + " is  $"+ daily_won_lose);
+			System.out.println("Amount earned for day : " + day + " is "+ daily_won_lose + "$");
 			if( daily_won_lose > max_win_day) {  //UC6 , To know the day when you won Maximum
 				max_win_day = daily_won_lose;
 				lucky_day = day;
@@ -52,7 +52,7 @@ public class Gambler {
 			win++;
 		}else {
 			daily_won_lose = daily_won_lose - stake_value;
-			System.out.println("Amount lost for day : " + day + " is "+ daily_won_lose);
+			System.out.println("Amount lost for day : " + day + " is "+ daily_won_lose + "$");
 			if( daily_won_lose > max_lose_day) { //UC6 , To know the day when you lost Maximum
 				max_lose_day = daily_won_lose;
 				unlucky_day = day;
@@ -66,7 +66,7 @@ public class Gambler {
 	Gambler gamble = new Gambler();
 	for(int day = 1; day<=20; day++) {  // UC 4 Playing for 20 days a month
 		double Daily_Earned_amount = gamble.play(stake_value,day); //calling method to play for everyday
-		System.out.println("Total amount after day : " + day + " is : $ " + Daily_Earned_amount ); //Printing total amount earned after each day
+		System.out.println("Total amount after day : " + day + " is : " + Daily_Earned_amount + "$" ); //Printing total amount earned after each day
 		System.out.println();
 		stake_value  = Daily_Earned_amount + 100; //UC1 after finish of every day adding 100$ to the total balance for next day
 	}
